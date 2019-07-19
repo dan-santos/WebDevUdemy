@@ -1,14 +1,15 @@
-/*
-* 
-* @author Jamilton Damasceno
-* @version 0.1
-*/
-
 /* ========================= layout ======================== */
-
+html, body, .capa{
+	height: 100%;
+}
 body{
-	border: 1px solid red;
-	background: 
+	overflow-x: hidden; /*impossibilita a rolagem horizontal, isso implica que coteúdos que ultrapassem a visualização
+	padrão do monitor sejam "cortados", já que os mesmos forçam a ampliação horizontal da página*/
+	background: url('imagens/capa.png'),
+				url('imagens/ruido.png'),
+				linear-gradient(50deg,#ff4169, #7c26f8);
+				background-attachment: fixed;
+				font-family: Helvetica, Arial, sans-serif;
 }
 
 /* -- Barra de navegação -- */
@@ -47,6 +48,83 @@ nav.navbar-transparente {
 }
 
 /* -- Imagem de capa -- */
+.capa{
+	display: table; /* alinhar texto verticalmente*/
+	width: 100% /* alinhar texto verticalmente*/
+}
+.texto-capa{
+	text-align: center;
+	color: white;
+	display: table-cell; /* alinhar texto verticalmente*/
+	vertical-align: middle; /* alinhar texto verticalmente*/
+}
 
+/* -- Botões -- */
+
+.btn-custom{
+	color: white;
+	border-radius: 300px;
+	-webkit-border-radius: 300px;
+	-moz-border-radius: 300px;
+	padding: 10px 35px;
+	text-transform: uppercase;
+	margin: 0px 15px 5px; /*5 pixels de bottom*/
+	transition: background 0.4s, color 0.4s; 
+}
+.btn-roxo{
+	background: #7c25f8;
+}
+.btn-roxo:hover{
+	background-color: #6207e3;
+	color: white;
+}
+.btn-branco{
+	border: 2px solid white;
+}
+.btn-branco:hover{
+	background-color: white;
+	color: black;
+}
+
+/* -- Seção servicos -- */
+#servicos{
+	background: white;
+	padding: 20px 0px;
+}
+.albuns{
+	padding: 15px 0px;
+}
+#recursos{
+	padding: 20px 0px;
+	color: white;
+}
+.rotacionar{
+	transform: rotate(30deg); /*rotacionar 30 graus*/
+	-webkit-transform: rotate(30deg);
+	-moz-transform: rotate(30deg);
+	padding-left: 80px;
+}
 
 /* ========================= Tipografia ======================== */
+h1{
+	font-size: 100px;
+	font-weight: 900;
+	letter-spacing: -0.05em;
+	margin-bottom: 50px;
+}
+h2{
+	font-size: 50px;
+	font-weight: 700;
+	letter-spacing: -0.04em;
+}
+h3{
+	font-size: 35px;
+	font-weight: 700;
+	letter-spacing: -0.04em;
+}
+#servicos h2, #servicos h3{ /*Formata apenas os h2/h3 que estiverem dentro de servicos*/
+	color: #7c25f8;
+}
+#recursos h2, #recursos h3{
+	color: #9bf0e1;
+}
