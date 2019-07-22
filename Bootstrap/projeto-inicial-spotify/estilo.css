@@ -1,6 +1,7 @@
 /* ========================= layout ======================== */
 html, body, .capa{
 	height: 100%;
+	overflow: auto; /*Só mostra a barra de rolagem caso necessário*/
 }
 body{
 	overflow-x: hidden; /*impossibilita a rolagem horizontal, isso implica que coteúdos que ultrapassem a visualização
@@ -39,12 +40,13 @@ nav.navbar-transparente {
 	margin: 16px 10px;
 }
 
-.navbar-inverse .navbar-nav>li>a {
+.navbar-inverse .navbar-nav>li>a, #rodape .nav a {
 	color: white;
 }
 
-.navbar-inverse .navbar-nav>li>a:hover {
+.navbar-inverse .navbar-nav>li>a:hover, #rodape .nav a:hover {
 	color: #9bf0e1;
+	background: none;
 }
 
 /* -- Imagem de capa -- */
@@ -66,10 +68,9 @@ nav.navbar-transparente {
 	border-radius: 300px;
 	-webkit-border-radius: 300px;
 	-moz-border-radius: 300px;
-	padding: 10px 35px;
 	text-transform: uppercase;
-	margin: 0px 15px 5px; /*5 pixels de bottom*/
 	transition: background 0.4s, color 0.4s; 
+	margin: 10px 15px;
 }
 .btn-roxo{
 	background: #7c25f8;
@@ -105,13 +106,25 @@ nav.navbar-transparente {
 	padding-left: 80px;
 }
 
+/* -- Rodapé -- */
+footer{
+	background: black;
+	padding: 50px 0px 20px 0px;
+	position: relative;
+}
+
+.item-rede-social{
+	float: right;
+}
+
 /* ========================= Tipografia ======================== */
 h1{
-	font-size: 100px;
 	font-weight: 900;
 	letter-spacing: -0.05em;
 	margin-bottom: 50px;
+	font-size: 60px;
 }
+
 h2{
 	font-size: 50px;
 	font-weight: 700;
@@ -122,9 +135,32 @@ h3{
 	font-weight: 700;
 	letter-spacing: -0.04em;
 }
+#rodape h4{
+	color: #919496;
+	font-size: 12px;
+	text-transform: uppercase;
+}
 #servicos h2, #servicos h3{ /*Formata apenas os h2/h3 que estiverem dentro de servicos*/
 	color: #7c25f8;
 }
 #recursos h2, #recursos h3{
 	color: #9bf0e1;
+}
+
+/* ========================= Media Queries ======================== */
+
+@media (min-width: 768px){ /*sm*/
+	h1{
+		font-size: 70px;
+	}
+}
+@media (min-width: 992px){ /*md*/
+	h1{
+		font-size: 80px;
+	}
+}
+@media (min-width: 1200px){ /*lg*/
+	h1{
+		font-size: 100px;
+	}
 }
