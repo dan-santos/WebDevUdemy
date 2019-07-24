@@ -13,4 +13,18 @@ function iniciaJogo(){
     }else{
         segundos = 30;
     }
+
+    document.getElementById("cronometro").innerHTML = segundos; //innerHTML = coloca um valor dentro de uma tag
+    
+    //qtd de baloes
+    var qtdBaloes = 10;
+    criaBaloes(qtdBaloes);
+
+}
+function criaBaloes(qtdBaloes){
+    for(var i = 0; i<= qtdBaloes; i++){
+        var balao = document.createElement("img");
+        balao.src = "../img/balao_azul_pequeno.png";
+        document.getElementById('cenario').appendChild(balao); //coloca elementos dentro da div
+    }
 }
